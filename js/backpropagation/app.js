@@ -1,7 +1,7 @@
 // basic usage
 
 // load math.js (using node.js)
-var math = require('mathjs');
+//var math = require('mathjs');
 var X =  [ [0,0,1],[0,1,1],[1,0,1],[1,1,1] ];
 var y =  transposeMatrix([[0,0,1,1]]);
 
