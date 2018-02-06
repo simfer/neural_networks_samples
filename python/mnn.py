@@ -1,4 +1,5 @@
 from numpy import exp, array, random, dot
+import time
 
 
 class NeuronLayer():
@@ -63,8 +64,9 @@ class NeuralNetwork():
 
 if __name__ == "__main__":
 
+    start_time = time.time()
     #Seed the random number generator
-    random.seed(1)
+    #random.seed(1)
 
     # Create layer 1 (4 neurons, each with 3 inputs)
     layer1 = NeuronLayer(4, 3)
@@ -90,7 +92,7 @@ if __name__ == "__main__":
 
     # Train the neural network using the training set.
     # Do it 60,000 times and make small adjustments each time.
-    neural_network.train(training_set_inputs, training_set_outputs, 1)
+    neural_network.train(training_set_inputs, training_set_outputs, 100000)
 
     print("Stage 2) New synaptic weights after training: ")
     neural_network.print_weights()
@@ -99,3 +101,4 @@ if __name__ == "__main__":
     print("Stage 3) Considering a new situation [1, 1, 0] -> ?: ")
     hidden_state, output = neural_network.think(array([1, 1, 0]))
     print(output)
+    print("--- %s seconds ---" % (time.time() - start_time))
